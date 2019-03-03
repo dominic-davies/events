@@ -20,11 +20,7 @@
                 </tr>
                 <tr>
                     <th>Price:</th>
-                    <% if event.price == 0 %>
-                        <td>Free</td>
-                    <% else %>
-                        <td><%= number_to_currency(event.price) %></td>
-                    <% end %>    
+                    <td><%= format_price(event) %></td>
                 </tr>
             </table>
         </article>        
