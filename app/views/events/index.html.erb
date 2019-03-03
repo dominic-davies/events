@@ -7,7 +7,7 @@
                 <h2><%= event.name %></h2>
             </header>
             <p>
-                <%= event.description %>
+                <%= truncate(event.description, length: 35, separator: ' ') %>
             </p>
             <table>
                 <tr>
