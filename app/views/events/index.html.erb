@@ -1,0 +1,10 @@
+<h1><%= @events.size %> Events</h1>
+<ul>
+    <% @events.each do |event| %>
+        <li>
+            <strong><%= event.name %></strong>
+            in      <%= event.location %>:
+                    <%= number_to_currency(event.price) %>
+        </li>            
+    <% end %>
+</ul>
