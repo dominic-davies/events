@@ -1,5 +1,6 @@
 <article>
 <header>
+    <%= image_for(@event) %>
     <h1><%=@event.name %></h1>
 </header>
 <p>
@@ -11,6 +12,8 @@
     <p><%= @event.location %></p>
 <h3>Price</h3>
     <p><%= format_price(@event) %></p>
+<h3>Capacity</h3>
+    <p><%= pluralize(@event.capacity, 'seat') %></p>
 </article>      
 
 <%= link_to "All Events", root_path %> |
