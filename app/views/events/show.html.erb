@@ -1,21 +1,14 @@
-<article>
-    <header class="show-page-image">
-        <%= image_for(@event) %>
-        <h1><%=@event.name %></h1>
-    </header>
-    <p>
-        <%= @event.description %>
-    </p>
-    <h3>When</h3>
-        <p><%= @event.starts_at %></p>
-    <h3>When</h3>
-        <p><%= @event.location %></p>
-    <h3>Price</h3>
-        <p><%= format_price(@event) %></p>
-    <h3>Capacity</h3>
-        <p><%= pluralize(@event.capacity, 'seat') %></p>
-</article>      
-
-
-<%= link_to "Edit", edit_event_path(@event) %> |
-<%= link_to "Delete", event_path(@event), method: :delete, data: {confirm: 'Are you sure?'} %>
+<div class="container">
+    <div class="card my-5">
+        <img class="card-img-top"><%= image_for(@event)%>
+        <div class="card-body">
+            <h5 class="card-title"><%=@event.name %></h5>
+            <p class="card-text"><%= @event.description %>.</p>
+            <p class="card-text">When:<%= @event.location %>.</p>
+            <p class="card-text">Price: <%= format_price(@event) %>.</p>
+            <p class="card-text">Capacity: <%= pluralize(@event.capacity, 'seat') %>.</p>
+            <%= link_to "Edit", edit_event_path(@event), class: "btn btn-warning" %>
+            <%= link_to "Delete", event_path(@event), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+        </div>
+    </div>
+</div>
