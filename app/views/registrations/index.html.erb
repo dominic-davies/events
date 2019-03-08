@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Registrations for <%= link_to(@event.name, @event) %></h1>
+    <p class="lead">Here's a list of everyone who has registered.</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="#" role="button">View all events</a>
+  </div>
+</div>
+
+<div class="container">
+    <ol id="registrations">
+    <% @registrations.each do |r| %>
+        <li>
+            <%= mail_to(r.email, r.name) %>
+            (<%= r.how_heard %>)
+        </li>
+    <% end %>
+    </ol>
+</div>

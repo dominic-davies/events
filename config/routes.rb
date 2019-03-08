@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
-  resources :registrations
+
   root "events#index"
-  
-  # get "events" => "events#index"
 
-  # get "events/:id" => "events#show", as: "event"
-
-  # get "events/:id/edit" => "events#edit", as: "edit_event"
-
-  # patch "events/:id" => "events#update"
-
-  resources :events
-
+  # use a ruby block here to nest
+  resources :events do
+    resources :registrations
+  end
 end
