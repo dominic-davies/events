@@ -8,6 +8,8 @@ class Event < ApplicationRecord
         message: "must reference a GIF, JPG, or PNG image"
     }
     
+    # destroy each child when parent object is destroyed.
+    has_many :registrations, dependent: :destroy
 
     # if an event is free it is business logic, so goes in model
     def free?
