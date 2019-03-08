@@ -11,6 +11,7 @@
             <%= link_to "Delete", event_path(@event), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
         </div>
         <div class="card-footer text-muted">
+            <%= link_to "Register", new_event_registration_path(@event), class: "btn btn-success" %>
             <%= link_to "Who's Registered?", event_registrations_path(@event), class: "btn btn-link" %>
         </div>
     </div>
